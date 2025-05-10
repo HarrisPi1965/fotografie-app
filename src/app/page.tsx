@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Mountain, Moon, Camera, Smartphone } from "lucide-react";
-import React from "react";
 
 const data = [
   {
@@ -19,10 +18,23 @@ const data = [
           Zeit: "1/125 s",
           ISO: "100–200",
           Fokus: "Hyperfokaldistanz",
-          Tipp: "Maximale Schärfe vorne bis hinten",
+          Tipp: "Maximale Schärfe vorne bis hinten"
         },
       },
-    ],
+      {
+        title: "Morgennebel über den Feldern",
+        image: "/images/morgennebel.jpg",
+        settings: {
+          Abstand: "10–30 m",
+          Objektiv: "24 mm",
+          Blende: "f/8",
+          Zeit: "1/125 s",
+          ISO: "200",
+          Fokus: "mittlerer Bildbereich",
+          Tipp: "Tolle Stimmung – Lichtstrahlen im Nebel suchen"
+        },
+      }
+    ]
   },
   {
     category: "Nacht",
@@ -30,7 +42,7 @@ const data = [
     examples: [
       {
         title: "Milchstraße fotografieren",
-        image: "/images/sternhimmel.jpg",
+        image: "/images/sternenhimmel.jpg",
         settings: {
           Abstand: "Unendlich",
           Objektiv: "14–24 mm",
@@ -38,10 +50,23 @@ const data = [
           Zeit: "20 s",
           ISO: "3200",
           Fokus: "Manuell auf Sterne",
-          Tipp: "Stativ verwenden, dunkler Himmel nötig",
+          Tipp: "Stativ verwenden, dunkler Himmel nötig"
         },
       },
-    ],
+      {
+        title: "Sternenspuren mit Langzeitbelichtung",
+        image: "/images/sternenpfad.jpg",
+        settings: {
+          Abstand: "Unendlich",
+          Objektiv: "14 mm",
+          Blende: "f/2.8",
+          Zeit: "30 s – 2 min",
+          ISO: "1600",
+          Fokus: "manuell auf Sterne",
+          Tipp: "Stativ + Fernauslöser – keine Lichtverschmutzung"
+        },
+      }
+    ]
   },
   {
     category: "Portrait",
@@ -57,10 +82,10 @@ const data = [
           Zeit: "1/200 s",
           ISO: "100–400",
           Fokus: "Gesicht",
-          Tipp: "Person + Hintergrund scharf",
+          Tipp: "Person + Hintergrund scharf"
         },
-      },
-    ],
+      }
+    ]
   },
   {
     category: "Smartphone",
@@ -76,11 +101,24 @@ const data = [
           Zeit: "Automatisch",
           ISO: "Automatisch",
           Fokus: "Gesicht",
-          Tipp: "Gutes Licht nutzen",
+          Tipp: "Gutes Licht nutzen"
         },
       },
-    ],
-  },
+      {
+        title: "Stadtlichter mit Smartphone",
+        image: "/images/smartphone-city.jpg",
+        settings: {
+          Abstand: "5–10 m",
+          Objektiv: "Weitwinkel",
+          Blende: "automatisch",
+          Zeit: "langsam (Nachtmodus)",
+          ISO: "hoch",
+          Fokus: "Szene",
+          Tipp: "Smartphone aufstützen für ruhige Belichtung"
+        },
+      }
+    ]
+  }
 ];
 
 export default function Page() {
@@ -115,11 +153,11 @@ export default function Page() {
               className="w-full object-cover"
             />
             <div className="p-4 bg-white text-black">
-              <h2 className="text-xl font-semibold mb-2">{ex.title}</h2>
+              <h2 className="text-xl font-bold mb-2">{ex.title}</h2>
               <ul className="text-sm space-y-1">
                 {Object.entries(ex.settings).map(([key, value]) => (
                   <li key={key}>
-                    <strong>{key}:</strong> {value}
+                    <span className="font-semibold">{key}:</span> {value}
                   </li>
                 ))}
               </ul>
