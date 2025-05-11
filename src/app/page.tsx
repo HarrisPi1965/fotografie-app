@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { Mountain, Moon, Camera, Smartphone } from "lucide-react";
+import { Mountain, Moon, Camera, Smartphone, Bug, Building2, CloudRain, Globe, Aperture } from "lucide-react";
 
 const data = [
   {
@@ -10,7 +10,7 @@ const data = [
     examples: [
       {
         title: "Klassische Landschaft",
-        image: "/images/landschaft.jpg",
+        image: "/images/landschaft1.jpg",
         settings: {
           Abstand: "Fokussiere auf 1/3 der Szene",
           Objektiv: "16–24 mm",
@@ -74,7 +74,7 @@ const data = [
     examples: [
       {
         title: "Person vor Landschaft",
-        image: "/images/portrait.jpg",
+        image: "/images/portrait1.jpg",
         settings: {
           Abstand: "3–5 m",
           Objektiv: "35 mm",
@@ -116,6 +116,101 @@ const data = [
           Fokus: "Szene",
           Tipp: "Smartphone aufstützen für ruhige Belichtung"
         },
+      }
+    ]
+  },
+  {
+    category: "Makro",
+    icon: <Bug />,
+    examples: [
+      {
+        title: "Insekt auf Blatt",
+        image: "/images/makro-insekt.jpg",
+        settings: {
+          Abstand: "0.2–0.5 m",
+          Objektiv: "Makro 90 mm",
+          Blende: "f/4–f/8",
+          Zeit: "1/250 s",
+          ISO: "200–400",
+          Fokus: "manuell, exakt aufs Auge",
+          Tipp: "Wind vermeiden, ruhige Umgebung suchen"
+        }
+      }
+    ]
+  },
+  {
+    category: "Street",
+    icon: <Globe />,
+    examples: [
+      {
+        title: "Mensch mit Regenschirm im Gegenlicht",
+        image: "/images/street-schirm.jpg",
+        settings: {
+          Abstand: "5–10 m",
+          Objektiv: "35 mm",
+          Blende: "f/5.6",
+          Zeit: "1/320 s",
+          ISO: "400",
+          Fokus: "Person",
+          Tipp: "Licht/Schatten nutzen, schnell reagieren"
+        }
+      }
+    ]
+  },
+  {
+    category: "Regen",
+    icon: <CloudRain />,
+    examples: [
+      {
+        title: "Spiegelung in der Pfütze",
+        image: "/images/regen-pfuetze.jpg",
+        settings: {
+          Abstand: "1–2 m",
+          Objektiv: "50 mm",
+          Blende: "f/2.8",
+          Zeit: "1/100 s",
+          ISO: "800",
+          Fokus: "Spiegelung",
+          Tipp: "Tiefe Perspektive einnehmen"
+        }
+      }
+    ]
+  },
+  {
+    category: "Reise",
+    icon: <Aperture />,
+    examples: [
+      {
+        title: "Straßenszene in Marrakesch",
+        image: "/images/reise-strasse.jpg",
+        settings: {
+          Abstand: "5–10 m",
+          Objektiv: "28–70 mm",
+          Blende: "f/5.6",
+          Zeit: "1/250 s",
+          ISO: "200",
+          Fokus: "Szene insgesamt",
+          Tipp: "Licht und Schatten der Umgebung nutzen"
+        }
+      }
+    ]
+  },
+  {
+    category: "Architektur",
+    icon: <Building2 />,
+    examples: [
+      {
+        title: "Glasfassade im Gegenlicht",
+        image: "/images/architektur-glas.jpg",
+        settings: {
+          Abstand: "Unendlich",
+          Objektiv: "24 mm Tilt-Shift",
+          Blende: "f/11",
+          Zeit: "1/200 s",
+          ISO: "100",
+          Fokus: "komplette Fassade",
+          Tipp: "Symmetrie + Linien bewusst einbauen"
+        }
       }
     ]
   }
@@ -168,3 +263,4 @@ export default function Page() {
     </main>
   );
 }
+
